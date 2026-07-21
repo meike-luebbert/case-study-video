@@ -31,9 +31,13 @@
   .trust-row{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted);font-weight:600}
   .trust-row span{display:flex;align-items:center;gap:7px}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .presenter{display:flex;align-items:center;gap:14px;margin-top:6px}
+  .mini-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #fff;box-shadow:0 4px 12px -4px rgba(18,38,58,.4)}
+  .pname{font-weight:700;font-size:16px;line-height:1.2}
+  .pmeta{font-size:14px;color:var(--muted);margin-top:2px}
 
   .video-lock{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;
-    background:linear-gradient(135deg,#12263A 0%,#26435f 100%);
+    background:linear-gradient(180deg,rgba(18,38,58,.45),rgba(18,38,58,.8)), url('https://img.youtube.com/vi/IVxp8zKLvbQ/maxresdefault.jpg') center/cover no-repeat, #12263A;
     display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;
     box-shadow:0 24px 50px -24px rgba(18,38,58,.55)}
   .play{width:66px;height:66px;border-radius:50%;background:#ffffff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
@@ -109,13 +113,15 @@
 <div class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="kicker">Case Study &middot; Wildcard Mastermind</span>
+      <span class="kicker">Case Study &middot; Europe's No. 1 Mastermind</span>
       <h1>Wie Patrick Wind in 3 Monaten einen Vertrieb aufgebaut hat, der ohne ihn läuft.</h1>
       <p class="lead">Du willst wissen, wie wir das gemacht haben? Patrick erzählt es dir im Video selbst &ndash; ehrlich, aus erster Hand. Trag dich ein, dann ist das Video für dich da.</p>
-      <div class="trust-row">
-        <span><span class="dot"></span> 25 Jahre Vertrieb</span>
-        <span><span class="dot"></span> 1.500+ ausgebildete Menschen</span>
-        <span><span class="dot"></span> Echte Praxis, keine Theorie</span>
+      <div class="presenter">
+        <img class="mini-avatar" src="meike.jpg" alt="Meike Lübbert">
+        <div>
+          <div class="pname">Meike Lübbert &middot; Next Sales Consulting</div>
+          <div class="pmeta">25 Jahre Vertrieb &middot; 1.500+ ausgebildete Menschen &middot; echte Praxis</div>
+        </div>
       </div>
     </div>
 
@@ -178,7 +184,7 @@
   <div class="wrap">
     <div class="quote">
       <p>&bdquo;Mein Ziel war, in drei Monaten ein Fundament zu legen, das ohne mich funktioniert. Genau das haben wir gebaut.&ldquo;</p>
-      <cite>&mdash; Patrick Wind, Wildcard Mastermind</cite>
+      <cite>&mdash; Patrick Wind &middot; Gründer &amp; Inhaber, Europe's No. 1 Mastermind</cite>
     </div>
   </div>
 </section>
