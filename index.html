@@ -125,14 +125,16 @@
         <div class="play"></div>
         <p>Trag dich rechts ein, dann schalte ich dir das Video frei.</p>
       </div>
-      <div class="form-card">
+      <div class="form-card" id="optin">
         <h3>Video ansehen</h3>
         <p class="sub">Wohin darf ich dir das Video schicken?</p>
-        <label for="vorname">Vorname</label>
-        <input id="vorname" type="text" placeholder="Dein Vorname">
-        <label for="email">E-Mail-Adresse</label>
-        <input id="email" type="email" placeholder="name@firma.de">
-        <button class="btn">Ja, zeig mir das Video &rarr;</button>
+        <form action="https://app.kit.com/forms/9709571/subscriptions" method="post">
+          <label for="vorname">Vorname</label>
+          <input id="vorname" name="fields[first_name]" type="text" placeholder="Dein Vorname">
+          <label for="email">E-Mail-Adresse</label>
+          <input id="email" name="email_address" type="email" placeholder="name@firma.de" required>
+          <button class="btn" type="submit">Ja, zeig mir das Video &rarr;</button>
+        </form>
         <p class="micro">Du bekommst gleich eine E-Mail von mir &ndash; einmal bestätigen, dann ist das Video da. Kein Spam, Abmeldung jederzeit mit einem Klick. Mit dem Eintragen meldest du dich zu meinem Newsletter an. <a href="#">Datenschutz</a>.</p>
       </div>
     </div>
@@ -216,7 +218,7 @@
     <div class="final">
       <h2>Schau's dir an.</h2>
       <p>Trag dich ein, bestätige kurz deine E-Mail &ndash; und Patricks Video ist für dich da.</p>
-      <button class="btn">Ja, zeig mir das Video &rarr;</button>
+      <a class="btn" href="#optin" style="display:block;text-decoration:none;max-width:340px;margin:0 auto">Ja, zeig mir das Video &rarr;</a>
     </div>
   </div>
 </section>
