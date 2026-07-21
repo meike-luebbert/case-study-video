@@ -25,7 +25,7 @@
   .kicker{display:inline-block;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:18px}
 
   .hero{padding:70px 0 60px;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start}
   h1{font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
   .lead{font-size:19px;color:var(--muted);margin-bottom:28px;max-width:42ch}
   .trust-row{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted);font-weight:600}
@@ -35,6 +35,8 @@
   .mini-avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #fff;box-shadow:0 4px 12px -4px rgba(18,38,58,.4)}
   .pname{font-weight:700;font-size:16px;line-height:1.2}
   .pmeta{font-size:14px;color:var(--muted);margin-top:2px}
+  .hero-highlight{margin-top:30px;padding:18px 22px;border-left:4px solid var(--accent);background:#fff;border-radius:0 12px 12px 0;font-size:17px;color:var(--ink);box-shadow:0 14px 34px -24px rgba(18,38,58,.5)}
+  .hero-highlight strong{font-weight:800}
 
   .video-lock{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;
     background:linear-gradient(180deg,rgba(18,38,58,.45),rgba(18,38,58,.8)), url('https://img.youtube.com/vi/IVxp8zKLvbQ/maxresdefault.jpg') center/cover no-repeat, #12263A;
@@ -116,6 +118,7 @@
       <span class="kicker">Case Study &middot; Europe's No. 1 Mastermind</span>
       <h1>Wie Patrick Wind in 3 Monaten einen Vertrieb aufgebaut hat, der ohne ihn läuft.</h1>
       <p class="lead">Du willst wissen, wie wir das gemacht haben? Patrick erzählt es dir im Video selbst &ndash; ehrlich, aus erster Hand. Trag dich ein, dann ist das Video für dich da.</p>
+      <div class="hero-highlight"><strong>170 qualifizierte Gespräche in 3 Monaten</strong> &ndash; ohne dass Patrick selbst verkauft hat.</div>
       <div class="presenter">
         <img class="mini-avatar" src="meike.jpg" alt="Meike Lübbert">
         <div>
@@ -129,7 +132,7 @@
       <div class="video-lock">
         <span class="lock-badge">&#128274; Freischalten</span>
         <div class="play"></div>
-        <p>Trag dich rechts ein, dann schalte ich dir das Video frei.</p>
+        <p>Trag dich ein, dann schalte ich dir das Video frei.</p>
       </div>
       <div class="form-card" id="optin">
         <h3>Video ansehen</h3>
@@ -161,7 +164,7 @@
       <div class="card">
         <div class="num">2</div>
         <h4>Der Hebel</h4>
-        <p>Idealen Kunden geschärft, CRM und klaren Sales-Prozess aufgesetzt (komplett im Miro-Board), zwei Kanäle aufgebaut &ndash; Empfehlungen + Ads. Und ein vierköpfiges Vertriebsteam gemeinsam recruited und ausgebildet.</p>
+        <p>ICP geschärft, ein CRM eingeführt und einen klaren Sales-Prozess aufgesetzt, zwei Marketingkanäle ausgebaut &ndash; Empfehlungen und Ads. Und ein vierköpfiges Vertriebsteam gemeinsam recruited und ausgebildet.</p>
       </div>
       <div class="card">
         <div class="num">3</div>
