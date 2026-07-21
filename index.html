@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wie Patrick Wind einen Vertrieb aufgebaut hat, der ohne ihn läuft</title>
+<style>
+  :root{
+    --bg:#F7F5F2;
+    --ink:#12263A;
+    --muted:#4b5b6b;
+    --accent:#E8552D;
+    --accent-dark:#c8451f;
+    --card:#ffffff;
+    --line:#e7e2db;
+    --navy:#12263A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .ph{color:var(--accent-dark);background:#f7d9cd66;border-radius:4px;padding:0 4px;font-style:normal}
+  .kicker{display:inline-block;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:18px}
+
+  .hero{padding:70px 0 60px;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+  h1{font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+  .lead{font-size:19px;color:var(--muted);margin-bottom:28px;max-width:42ch}
+  .trust-row{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted);font-weight:600}
+  .trust-row span{display:flex;align-items:center;gap:7px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+  .video-lock{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;
+    background:linear-gradient(135deg,#12263A 0%,#26435f 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;
+    box-shadow:0 24px 50px -24px rgba(18,38,58,.55)}
+  .play{width:66px;height:66px;border-radius:50%;background:#ffffff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .play::after{content:"";border-left:20px solid var(--navy);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+  .lock-badge{position:absolute;top:14px;right:14px;background:#ffffff2e;backdrop-filter:blur(4px);border:1px solid #ffffff40;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600}
+  .video-lock p{font-size:15px;opacity:.92;max-width:26ch}
+
+  .form-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 26px;margin-top:22px;box-shadow:0 16px 40px -28px rgba(18,38,58,.4)}
+  .form-card h3{font-size:20px;margin-bottom:4px}
+  .form-card .sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+  label{display:block;font-size:13px;font-weight:600;margin:12px 0 6px}
+  input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:#fbfaf8}
+  input:focus{outline:none;border-color:var(--accent)}
+  .btn{width:100%;margin-top:18px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:15px;font-size:16px;font-weight:700;cursor:pointer;transition:background .15s}
+  .btn:hover{background:var(--accent-dark)}
+  .micro{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.5}
+  .micro a{color:var(--muted)}
+
+  section.block{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-size:30px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px;max-width:24ch}
+  .section-lead{color:var(--muted);font-size:17px;margin-bottom:34px;max-width:56ch}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 22px}
+  .card .num{width:34px;height:34px;border-radius:9px;background:#12263A;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:15px}
+  .card h4{font-size:17px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+  .stat{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 12px}
+  .stat b{display:block;font-size:32px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  .quote{background:var(--navy);color:#fff;border-radius:20px;padding:44px 40px;margin-top:8px}
+  .quote p{font-size:23px;line-height:1.4;font-weight:600;max-width:32ch;margin-bottom:16px}
+  .quote cite{font-style:normal;color:#9fb3c6;font-size:15px}
+
+  .foryou{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .foryou li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;font-size:16px;display:flex;gap:12px;align-items:flex-start}
+  .check{color:var(--accent);font-weight:800;flex-shrink:0}
+  .foryou-note{margin-top:22px;font-size:17px;font-weight:600}
+
+  .about{display:grid;grid-template-columns:150px 1fr;gap:34px;align-items:center;background:var(--navy);color:#fff;border-radius:20px;padding:40px}
+  .avatar{width:150px;height:150px;border-radius:16px;background:#26435f;display:flex;align-items:center;justify-content:center;font-size:13px;color:#ffffff99;text-align:center;padding:10px}
+  .about h3{font-size:24px;margin-bottom:12px}
+  .about p{color:#d5dde5;font-size:16px;margin-bottom:10px}
+
+  .final{background:linear-gradient(135deg,#12263A,#20374e);color:#fff;text-align:center;border-radius:20px;padding:56px 30px}
+  .final h2{margin:0 auto 14px;color:#fff}
+  .final p{color:#cdd6df;font-size:17px;max-width:46ch;margin:0 auto 26px}
+  .final .btn{max-width:340px;margin:0 auto}
+
+  footer{padding:38px 0;text-align:center;color:var(--muted);font-size:13px}
+  footer a{color:var(--muted)}
+
+  .banner{background:#12263A;color:#fff;font-size:13px;text-align:center;padding:9px}
+  .banner b{color:#ffcf5a}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    h1{font-size:33px}
+    .cards{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .foryou{grid-template-columns:1fr}
+    .about{grid-template-columns:1fr;text-align:center}
+    .avatar{margin:0 auto}
+  }
+</style>
+</head>
+<body>
+
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Case Study &middot; Wildcard Mastermind</span>
+      <h1>Wie Patrick Wind in 3 Monaten einen Vertrieb aufgebaut hat, der ohne ihn läuft.</h1>
+      <p class="lead">Du willst wissen, wie wir das gemacht haben? Patrick erzählt es dir im Video selbst &ndash; ehrlich, aus erster Hand. Trag dich ein, dann ist das Video für dich da.</p>
+      <div class="trust-row">
+        <span><span class="dot"></span> 25 Jahre Vertrieb</span>
+        <span><span class="dot"></span> 1.500+ ausgebildete Menschen</span>
+        <span><span class="dot"></span> Echte Praxis, keine Theorie</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="video-lock">
+        <span class="lock-badge">&#128274; Freischalten</span>
+        <div class="play"></div>
+        <p>Trag dich rechts ein, dann schalte ich dir das Video frei.</p>
+      </div>
+      <div class="form-card">
+        <h3>Video ansehen</h3>
+        <p class="sub">Wohin darf ich dir das Video schicken?</p>
+        <label for="vorname">Vorname</label>
+        <input id="vorname" type="text" placeholder="Dein Vorname">
+        <label for="email">E-Mail-Adresse</label>
+        <input id="email" type="email" placeholder="name@firma.de">
+        <button class="btn">Ja, zeig mir das Video &rarr;</button>
+        <p class="micro">Du bekommst gleich eine E-Mail von mir &ndash; einmal bestätigen, dann ist das Video da. Kein Spam, Abmeldung jederzeit mit einem Klick. Mit dem Eintragen meldest du dich zu meinem Newsletter an. <a href="#">Datenschutz</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S IN THE VIDEO -->
+<section class="block">
+  <div class="wrap">
+    <h2>Das erwartet dich im Video</h2>
+    <p class="section-lead">Keine Hochglanz-Show. Patrick spricht offen darüber, wo sein Vertrieb stand &ndash; und was wir in drei Monaten daraus gebaut haben.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="num">1</div>
+        <h4>Die Ausgangslage</h4>
+        <p>Der komplette Vertrieb hing zu 100&nbsp;% an Patrick: manuelles Outreach auf Instagram, Verkaufen auf Events. Hat funktioniert &ndash; aber nur bis zu einem Deckel.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h4>Der Hebel</h4>
+        <p>Idealen Kunden geschärft, CRM und klaren Sales-Prozess aufgesetzt (komplett im Miro-Board), zwei Kanäle aufgebaut &ndash; Empfehlungen + Ads. Und ein vierköpfiges Vertriebsteam gemeinsam recruited und ausgebildet.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h4>Das Ergebnis</h4>
+        <p>170 qualifizierte Gespräche in 3 Monaten, 30 neue passende Interessenten &ndash; und ein Fundament, das ohne Patrick läuft.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>170</b><span>qualifizierte Gespräche in 3 Monaten</span></div>
+      <div class="stat"><b>4</b><span>Vertriebler recruited &amp; ausgebildet</span></div>
+      <div class="stat"><b>30</b><span>neue passende Interessenten</span></div>
+      <div class="stat"><b>100 &rarr; 0</b><span>% Vertrieb am Gründer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="block">
+  <div class="wrap">
+    <div class="quote">
+      <p>&bdquo;Mein Ziel war, in drei Monaten ein Fundament zu legen, das ohne mich funktioniert. Genau das haben wir gebaut.&ldquo;</p>
+      <cite>&mdash; Patrick Wind, Wildcard Mastermind</cite>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="block">
+  <div class="wrap">
+    <h2>Ob das Video für dich ist?</h2>
+    <p class="section-lead">Wenn du dich hier wiedererkennst, wirst du im Video einiges mitnehmen:</p>
+    <ul class="foryou">
+      <li><span class="check">&#10003;</span> Du machst schon mittlere sechs- bis siebenstellige Umsätze.</li>
+      <li><span class="check">&#10003;</span> Dein Vertrieb hängt noch zu stark an dir als Person.</li>
+      <li><span class="check">&#10003;</span> Du verkaufst erklärungsbedürftig / High-Ticket &ndash; kein Low-Ticket-Evergreen.</li>
+      <li><span class="check">&#10003;</span> Du willst keinen Theorie-Kram, sondern sehen, was in der Praxis funktioniert.</li>
+    </ul>
+    <p class="foryou-note">Erkennst du dich wieder? Dann ist das Video für dich. &#128071;</p>
+  </div>
+</section>
+
+<!-- ABOUT MEIKE -->
+<section class="block">
+  <div class="wrap">
+    <div class="about">
+      <div class="avatar">[Foto von Meike]</div>
+      <div>
+        <h3>Kurz zu mir</h3>
+        <p>Ich bin Meike. 25 Jahre Vertrieb &ndash; nicht auf der Bühne, sondern draußen, im echten Geschäft. In der Online Sales Academy habe ich über 1.500 Menschen ausgebildet.</p>
+        <p>Heute arbeite ich mit Unternehmer:innen auf Augenhöhe an ihrem Vertrieb. Nicht operativ, sondern strategisch. Das Ergebnis von Patrick ist genau daraus entstanden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="block" style="border:none">
+  <div class="wrap">
+    <div class="final">
+      <h2>Schau's dir an.</h2>
+      <p>Trag dich ein, bestätige kurz deine E-Mail &ndash; und Patricks Video ist für dich da.</p>
+      <button class="btn">Ja, zeig mir das Video &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; Next Sales Consulting GmbH &nbsp;&middot;&nbsp; <a href="#">Impressum</a> &nbsp;&middot;&nbsp; <a href="#">Datenschutz</a>
+  </div>
+</footer>
+
+</body>
+</html>
