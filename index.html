@@ -128,14 +128,14 @@
       <div class="form-card" id="optin">
         <h3>Video ansehen</h3>
         <p class="sub">Wohin darf ich dir das Video schicken?</p>
-        <form action="https://app.kit.com/forms/9709571/subscriptions" method="post">
+        <form id="optin-form" action="https://app.kit.com/forms/9709571/subscriptions" method="post">
           <label for="vorname">Vorname</label>
           <input id="vorname" name="fields[first_name]" type="text" placeholder="Dein Vorname">
           <label for="email">E-Mail-Adresse</label>
           <input id="email" name="email_address" type="email" placeholder="name@firma.de" required>
           <button class="btn" type="submit">Ja, zeig mir das Video &rarr;</button>
         </form>
-        <p class="micro">Du bekommst gleich eine E-Mail von mir &ndash; einmal bestätigen, dann ist das Video da. Kein Spam, Abmeldung jederzeit mit einem Klick. Mit dem Eintragen meldest du dich zu meinem Newsletter an. <a href="#">Datenschutz</a>.</p>
+        <p class="micro">Du bekommst gleich eine E-Mail von mir &ndash; einmal bestätigen, dann ist das Video da. Kein Spam, Abmeldung jederzeit mit einem Klick. Mit dem Eintragen meldest du dich zu meinem Newsletter an. <a href="https://www.meike-luebbert.de/datenschutz" target="_blank">Datenschutz</a>.</p>
       </div>
     </div>
   </div>
@@ -202,7 +202,7 @@
 <section class="block">
   <div class="wrap">
     <div class="about">
-      <div class="avatar">[Foto von Meike]</div>
+      <img class="avatar" src="https://onecdn.io/media/8e22e2b5-6964-417a-a3ea-2d73c752d383/xlg" alt="Meike Lübbert" style="object-fit:cover;padding:0">
       <div>
         <h3>Kurz zu mir</h3>
         <p>Ich bin Meike. 25 Jahre Vertrieb &ndash; nicht auf der Bühne, sondern draußen, im echten Geschäft. In der Online Sales Academy habe ich über 1.500 Menschen ausgebildet.</p>
@@ -225,9 +225,20 @@
 
 <footer>
   <div class="wrap">
-    &copy; Next Sales Consulting GmbH &nbsp;&middot;&nbsp; <a href="#">Impressum</a> &nbsp;&middot;&nbsp; <a href="#">Datenschutz</a>
+    &copy; Next Sales Consulting GmbH &nbsp;&middot;&nbsp; <a href="https://www.meike-luebbert.de/impressum" target="_blank">Impressum</a> &nbsp;&middot;&nbsp; <a href="https://www.meike-luebbert.de/datenschutz" target="_blank">Datenschutz</a>
   </div>
 </footer>
+
+<script>
+  var f = document.getElementById('optin-form');
+  if (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      fetch(f.action, { method: 'POST', body: new FormData(f), mode: 'no-cors' })
+        .finally(function () { window.location.href = 'bestaetigen.html'; });
+    });
+  }
+</script>
 
 </body>
 </html>
