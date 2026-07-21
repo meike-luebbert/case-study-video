@@ -26,7 +26,10 @@
   .kicker{display:inline-block;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:18px}
 
   .hero{padding:70px 0 60px;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:0 52px;align-items:start;grid-template-areas:"intro media" "proof media"}
+  .h-intro{grid-area:intro}
+  .h-media{grid-area:media}
+  .h-proof{grid-area:proof}
   h1{font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
   .lead{font-size:19px;color:var(--muted);margin-bottom:28px;max-width:42ch}
   .trust-row{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted);font-weight:600}
@@ -100,7 +103,8 @@
   .banner b{color:#ffcf5a}
 
   @media(max-width:860px){
-    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero{padding:44px 0 44px}
+    .hero-grid{grid-template-columns:1fr;gap:26px;grid-template-areas:"intro" "media" "proof"}
     h1{font-size:33px}
     .cards{grid-template-columns:1fr}
     .stats{grid-template-columns:repeat(2,1fr)}
@@ -116,21 +120,13 @@
 <!-- HERO -->
 <div class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="h-intro">
       <span class="kicker">Case Study &middot; Europe's No. 1 Mastermind</span>
       <h1>Wie Patrick Wind in 3 Monaten einen Vertrieb aufgebaut hat, der ohne ihn läuft.</h1>
       <p class="lead">Du willst wissen, wie wir das gemacht haben? Patrick erzählt es dir im Video selbst &ndash; ehrlich, aus erster Hand. Trag dich ein, dann ist das Video für dich da.</p>
-      <div class="hero-highlight"><strong>170 qualifizierte Gespräche in 3 Monaten</strong> &ndash; ohne dass Patrick selbst verkauft hat.</div>
-      <div class="presenter">
-        <img class="mini-avatar" src="meike.jpg" alt="Meike Lübbert">
-        <div>
-          <div class="pname">Meike Lübbert &middot; Next Sales Consulting</div>
-          <div class="pmeta">25 Jahre Vertrieb &middot; 1.500+ ausgebildete Menschen &middot; echte Praxis</div>
-        </div>
-      </div>
     </div>
 
-    <div>
+    <div class="h-media">
       <a class="video-lock" href="#optin" title="Trag dich ein, um das Video freizuschalten">
         <span class="lock-badge">&#128274; Freischalten</span>
         <div class="play"></div>
@@ -146,6 +142,17 @@
           <button class="btn" type="submit">Ja, zeig mir das Video &rarr;</button>
         </form>
         <p class="micro">Du bekommst gleich eine E-Mail von mir &ndash; einmal bestätigen, dann ist das Video da. Kein Spam, Abmeldung jederzeit mit einem Klick. Mit dem Eintragen meldest du dich zu meinem Newsletter an. <a href="https://www.meike-luebbert.de/datenschutz" target="_blank">Datenschutz</a>.</p>
+      </div>
+    </div>
+
+    <div class="h-proof">
+      <div class="hero-highlight"><strong>170 qualifizierte Gespräche in 3 Monaten</strong> &ndash; ohne dass Patrick selbst verkauft hat.</div>
+      <div class="presenter">
+        <img class="mini-avatar" src="meike.jpg" alt="Meike Lübbert">
+        <div>
+          <div class="pname">Meike Lübbert &middot; Next Sales Consulting</div>
+          <div class="pmeta">25 Jahre Vertrieb &middot; 1.500+ ausgebildete Menschen &middot; echte Praxis</div>
+        </div>
       </div>
     </div>
   </div>
