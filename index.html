@@ -39,9 +39,10 @@
   .hero-highlight strong{font-weight:800}
 
   .video-lock{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;
-    background:linear-gradient(180deg,rgba(18,38,58,.45),rgba(18,38,58,.8)), url('https://img.youtube.com/vi/IVxp8zKLvbQ/maxresdefault.jpg') center/cover no-repeat, #12263A;
+    background:linear-gradient(180deg,rgba(18,38,58,.3),rgba(18,38,58,.58)), url('https://img.youtube.com/vi/IVxp8zKLvbQ/maxresdefault.jpg') center/cover no-repeat, #12263A;
     display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;
-    box-shadow:0 24px 50px -24px rgba(18,38,58,.55)}
+    box-shadow:0 24px 50px -24px rgba(18,38,58,.55);text-decoration:none;cursor:pointer;transition:transform .15s}
+  .video-lock:hover{transform:translateY(-2px)}
   .play{width:66px;height:66px;border-radius:50%;background:#ffffff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
   .play::after{content:"";border-left:20px solid var(--navy);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
   .lock-badge{position:absolute;top:14px;right:14px;background:#ffffff2e;backdrop-filter:blur(4px);border:1px solid #ffffff40;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600}
@@ -129,11 +130,10 @@
     </div>
 
     <div>
-      <div class="video-lock">
+      <a class="video-lock" href="#optin" title="Trag dich ein, um das Video freizuschalten">
         <span class="lock-badge">&#128274; Freischalten</span>
         <div class="play"></div>
-        <p>Trag dich ein, dann schalte ich dir das Video frei.</p>
-      </div>
+      </a>
       <div class="form-card" id="optin">
         <h3>Video ansehen</h3>
         <p class="sub">Wohin darf ich dir das Video schicken?</p>
